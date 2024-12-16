@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>Keynotes</h2>
+  <button class="btn btn-primary mb-3" routerLink="/keynotes/new">Add New Keynote</button>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Function</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (keynote of keynotes; track $index) {
+        <tr>
+          <td>{{keynote.firstName}} {{keynote.lastName}}</td>
+          <td>{{keynote.email}}</td>
+          <td>{{keynote.function}}</td>
+          <td>
+            <button class="btn btn-sm btn-info me-2">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteKeynote(keynote.id!)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
